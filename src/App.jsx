@@ -1,19 +1,35 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+
 
 const Title = () => {
   return (
-    <h1>
-      Hello World! app.jsx
+    <h1 className="TitleText">
+      Shokutsu
     </h1>
   )
 }
 
 function App() {
+  
   return (
-    <div className="p-5">
-      <Title />
-    </div>
+    <section className="plate">
+      <div className="" class="App">
+       <Title />
+      </div>
+      <nav>
+        <ul className="NavList">
+          <li>Menu</li>
+          <li>Hours</li>
+          <li>Map</li>
+          <li>About</li>
+        </ul>
+      </nav>
+      <div className="updatePlate">
+
+      </div>
+    </section>
   )
+
 }
 
 
