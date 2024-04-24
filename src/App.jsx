@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Title = () => {
   return (
     <h1>
-      Hello World!
+      Hello World! app.jsx
     </h1>
   )
 }
@@ -11,7 +11,6 @@ const Title = () => {
 function App() {
   return (
     <div className="p-5">
-      <Link to='/about'>About</Link>
       <Title />
     </div>
   )

@@ -10,7 +10,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
-import About from './About'
+
 import App from './App'
 import ErrorPage from './ErrorPage'
 import Header from './Header'
@@ -41,10 +41,7 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <ErrorPage />
       },
-      {
-        path: '/about',
-        element: <About />
-      },
+      
     ]
   }
 ], {
