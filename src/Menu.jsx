@@ -4,6 +4,9 @@ import axios from 'axios';
 
 function Menu() {
     const [data, setData] = useState([]) 
+    const [appOpen, setAppOpen] = useState(false);
+    const [dinOpen, setDinOpen] = useState(false);
+    const [desOpen, setDesOpen] = useState(false);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -21,6 +24,31 @@ function Menu() {
     
     }, []);
 
+    //toggle
+    function handleAppToggle(){
+        if (appOpen === true){
+            setAppOpen(false) 
+        }else{
+            setAppOpen(true)
+        }
+    }
+    function handleDinToggle(){
+        if (dinOpen === true){
+            setDinOpen(false) 
+        }else{
+            setDinOpen(true)
+        }
+    }
+    function handleDesToggle(){
+        if (desOpen === true){
+            setDesOpen(false) 
+        }else{
+            setDesOpen(true)
+        }
+    }
+    
+
+
     console.log(data)
     
     //Appetizers
@@ -28,7 +56,10 @@ function Menu() {
     console.log("appetizer Items:", appetizerItems)
 
     const appetizerList = appetizerItems.map(item => (
-        <div key = {item.id}>
+        <div>
+            
+            <div key = {item.id}>
+        </div>
             <p className="menuItemContent"><span className="itemTitle">{item.title}:</span><br></br>{item.description}<br></br>{item.price}</p>
         </div>
     ));
@@ -55,12 +86,12 @@ function Menu() {
      
     return (
         <div className="appScroll" style={{overflowY: 'scroll'}}>
-            <h2 className="menuItemHeader">Appetizers</h2>
-            {appetizerList}
-            <h2 className="menuItemHeader">Entrees</h2>
-            {dinnerList}
-            <h2 className="menuItemHeader">Desserts</h2>
-            {dessertList}
+            <h2 onClick={handleAppToggle} className="menuItemHeader">Appetizers</h2>
+            {appOpen === true ? appetizerList:null}
+            <h2 onClick={handleDinToggle} className="menuItemHeader">Entrees</h2>
+            {dinOpen === true ? dinnerList:null}
+            <h2 onClick={handleDesToggle} className="menuItemHeader">Desserts</h2>
+            {desOpen === true ? dessertList:null}
         </div>
     )
 }

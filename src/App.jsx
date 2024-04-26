@@ -5,6 +5,7 @@ import Map from "./Map";
 import About from "./About"
 import { useState } from "react";
 
+
 const Title = () => {
   return (
     <h1 className="TitleText">
@@ -39,13 +40,14 @@ function App() {
   return (
     <section className="plate">
       <div className="" class="App">
+        
         <Title />
         </div>
-          <nav>
+          <nav className="borderBottom">
             <ul className="NavList">
               <button className="button" onClick={(() => setView("Menu"))}>Menu</button>
               <button className="button" onClick={(() => setView("Hours"))}>Hours</button>
-              <button className="button" onClick={(() => setView("Map"))}>Map</button>
+              <button className="button" onClick={(() => setView("Map"))}>Location</button>
               <button className="button" onClick={(() => setView("About"))}>About</button>
             </ul>
           </nav>

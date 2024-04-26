@@ -34,21 +34,24 @@ body {
 .plate{
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.591);
-  margin: 10%;
-  height: 90%;
+  background-color: rgba(255, 255, 255, 0.888);
+  margin: 12%;
+  height: 87%;
   text-align: center;
+  border-radius: 25px;
 }
 
 .NavList{
   display: flex;
-  color: rgb(250, 233, 0);
+  color: #ff6a00;
   justify-content: space-between;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
   flex-wrap: wrap;
   text-align: center;
-  text-shadow: 2px 2px rgb(50, 173, 161);
+  text-shadow: 2px 2px #0095ff;
+  border-bottom: 2px;
+  border-color: #ff6a00;
 }
 
 .updatePlate{
@@ -60,7 +63,7 @@ body {
 
 .TitleText{
   font-family: samurai;
-  color: rgb(250, 233, 0);
+  color: #ff6a00;
   font-stretch: expanded;
   font-size: 350%;
   text-shadow: 2px 2px rgb(50, 173, 161);
@@ -81,19 +84,19 @@ body {
 
 .menuItemHeader{
   font-family: samurai;
-  color: rgb(250, 233, 0);
+  color: #ff6a00;
   text-shadow: 2px 2px rgb(50, 173, 161);
   font-size: xx-large;
 }
 
 .menuItemContent{
-  color: rgb(250, 233, 0);
+  color: #ff6a00;
   font-family: sans-serif;
 }
 
 .button{
   font-family: samurai;
-  color: rgb(250, 233, 0);
+  color: #ff6a00;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   text-shadow: 2px 2px rgb(50, 173, 161);
@@ -105,7 +108,22 @@ body {
   
 }
 
+.borderBottom{
+  border-bottom: 5px;
+  border-color: #ff6a00;
+}
+
+.locationText{
+  color: #ff6a00;
+  font-family: sans-serif;
+}
+
+.menuItemHeader:hover{
+  cursor: pointer;
+}
+
 @font-face {
   font-family: samurai;
   src: url("assets/SamuraiBlast-YznGj.ttf");
 }
+

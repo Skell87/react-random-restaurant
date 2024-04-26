@@ -9,6 +9,7 @@
     "preview-build": "vite preview --outDir docs"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.6",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
