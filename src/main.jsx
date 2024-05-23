@@ -18,6 +18,8 @@ import Header from './Header'
 
 const site = import.meta.env.BASE_URL
 
+//not much changed here, essentially just setting the background image to be static to the site, 
+//that way nothing changes post viewplate change. contains an unused header and a used footer. 
 
 function Layout() {
   return (

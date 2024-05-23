@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+//menu function. this sets state for the api data and the drop down menu
 function Menu() {
     const [data, setData] = useState([]) 
     const [appOpen, setAppOpen] = useState(false);
     const [dinOpen, setDinOpen] = useState(false);
     const [desOpen, setDesOpen] = useState(false);
     
+    //api call happening asynchronusly from custom JSON
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await 
-                axios.get('https://raw.githubusercontent.com/Skell87/menu/main/menu2.json');
+                axios.get('http://127.0.0.1:8000/food/');
                 setData(response.data);
                 // console.log(response.data)
             } catch (error) {
@@ -24,7 +26,8 @@ function Menu() {
     
     }, []);
 
-    //toggle
+
+    //this function is for the dropdown toggle
     function handleAppToggle(){
         if (appOpen === true){
             setAppOpen(false) 
@@ -51,15 +54,17 @@ function Menu() {
 
     console.log(data)
     
-    //Appetizers
+    //Appetizers: this block of code pulls the appetizer items by category
     const appetizerItems = data.filter(item => item.category === "Appetizer");
     console.log("appetizer Items:", appetizerItems)
 
+    //this maps the retrieved appetizer items and displays them on page with their price, description and name.
+    // custom css added to certain elements of the text.
+    //page breaks for effect and separation
     const appetizerList = appetizerItems.map(item => (
-        <div>
-            
+        
             <div key = {item.id}>
-        </div>
+        
             <p className="menuItemContent"><span className="itemTitle">{item.title}:</span><br></br>{item.description}<br></br>{item.price}</p>
         </div>
     ));
@@ -84,6 +89,9 @@ function Menu() {
         </div>
     ))
      
+    // the return. this sends to the display plate and sets up overflow and scroll, 
+    // adds on click handlers to each menu category that reference the state management above for
+    // the dropdowns. and displays the category lists specified above.
     return (
         <div className="appScroll" style={{overflowY: 'scroll'}}>
             <h2 onClick={handleAppToggle} className="menuItemHeader">Appetizers</h2>
