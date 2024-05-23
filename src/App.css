@@ -55,10 +55,14 @@ body {
 }
 
 .updatePlate{
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 255, 255, 0);
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  align-items: center;
+  
 }
 
 .TitleText{
@@ -120,6 +124,17 @@ body {
 
 .menuItemHeader:hover{
   cursor: pointer;
+}
+
+.submitButton{
+  align-self: center;
+}
+
+.orderInfo{
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
 }
 
 @font-face {
