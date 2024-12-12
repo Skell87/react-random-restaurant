@@ -1,15 +1,144 @@
 html {
-  height: 100%;
+  height: 100vh;
 }
+
 body {
-  height: 100%;
+  height: 100vh;
 }
-#root {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
+
+#root{
+  height: 100vh;
 }
-#page-content {
+
+#page-content{
   flex-grow: 2;
+  height: 100%
 }
+
+.Hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-image: url("./assets/anime-style-house-architecture.jpg");
+  background-size: cover ;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  /* align-content: center; */
+  background-position: center center;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-color: #7e9485;
+}
+
+.plate{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.888);
+  margin: 12%;
+  height: 87%;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.NavList{
+  display: flex;
+  color: #ff6a00;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-wrap: wrap;
+  text-align: center;
+  text-shadow: 2px 2px #0095ff;
+  border-bottom: 2px;
+  border-color: #ff6a00;
+}
+
+.updatePlate{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 255, 255, 0);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  align-items: center;
+  
+}
+
+.TitleText{
+  font-family: samurai;
+  color: #ff6a00;
+  font-stretch: expanded;
+  font-size: 350%;
+  text-shadow: 2px 2px rgb(50, 173, 161);
+}
+.Footer{
+  color: #7e9485;
+}
+
+.errorcolor{
+  color: white;
+  background-color: black;
+}
+
+.appScroll{
+  
+  overflow-y: scroll;
+}
+
+.menuItemHeader{
+  font-family: samurai;
+  color: #ff6a00;
+  text-shadow: 2px 2px rgb(50, 173, 161);
+  font-size: xx-large;
+}
+
+.menuItemContent{
+  color: #ff6a00;
+  font-family: sans-serif;
+}
+
+.button{
+  font-family: samurai;
+  color: #ff6a00;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-shadow: 2px 2px rgb(50, 173, 161);
+}
+
+.itemTitle{
+  font-family: samurai;
+  text-decoration: underline;
+  
+}
+
+.borderBottom{
+  border-bottom: 5px;
+  border-color: #ff6a00;
+}
+
+.locationText{
+  color: #ff6a00;
+  font-family: sans-serif;
+}
+
+.menuItemHeader:hover{
+  cursor: pointer;
+}
+
+.submitButton{
+  align-self: center;
+}
+
+.orderInfo{
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+}
+
+@font-face {
+  font-family: samurai;
+  src: url("assets/SamuraiBlast-YznGj.ttf");
+}
+

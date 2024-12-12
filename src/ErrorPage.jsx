@@ -16,7 +16,7 @@ function ErrorPage() {
       <h1>Oops!</h1>
       <h2>An error occurred.</h2>
       {errorMessage ? (
-        <p>{errorMessage}</p>
+        <p className="errorcolor">{errorMessage}</p>
       ) : null}
     </div>
   )

@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <div>
-      Footer
+    <div className="Footer">
+      Image by Freepik
     </div>
   )
 }
