@@ -3,39 +3,13 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'; 
 import PhoneInput from 'react-phone-number-input'
 
-// function OrderForm() {
-//     let namevariable = 'brandon'
 
-//     const handleFormChange = (e,) => {
-//         console.log("YES I AM HERE", e)
-//         console.log(name, e.target.value)
-//         setFormData({...formData, [name]: e.target.value }); 
-//     }
-
-//     const [formData, setFormData] = useState({
-//         firstName: '',
-//         lastName: '',
-//         phoneNumber: '',
-
-//     });
-
-//     return (
-//         <div className="orderInput">
-//                 <span className="menuItemHeader">Order</span>
-//                 <input type="text" value={formData.firstName} onChange={(e => setFormData({...formData, firstName: e.target.value}))} placeholder="first name"/>
-//                 <input type="text" value={formData.lastName} onChange={(e => setFormData({...formData, lastName: e.target.value}))} placeholder="last name"/>
-//                 <input type='text' value={formData.phoneNumber} onChange={(e => setFormData({...formData, phoneNumber: e.target.value}))} placeholder="phone number"/>
-                
-//             </div>
-//     )
-// }
 
 function Order(){
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
-        phone_number: '',
-
+        phone_number: ''
     });
 
     const handleFormSubmit = (e) => {
@@ -55,6 +29,32 @@ function Order(){
             console.log('error submitting user info', error);
         })
     }
+
+    function handleAddToAppetizer(itemId, itemName, itemPrice){
+        const newAppetizer = {id: itemId, title: itemName, price: itemPrice};
+        setFormData(prevState => ({
+            ...prevState, 
+            appetizers: [...prevState.appetizers, newAppetizer]
+        }))
+    }
+
+    function handleAddToEntree(itemId, itemName, itemPrice){
+        const newEntree = {id: itemId, title: itemName, price: itemPrice};
+        setFormData(prevState => ({
+            ...prevState, 
+            entrees: [...prevState.entrees, newEntree]
+        }))
+    }
+
+    function handleAddToDessert(itemId, itemName, itemPrice){
+        const newDessert = {id: itemId, title: itemName, price: itemPrice};
+        setFormData(prevState => ({
+            ...prevState, 
+            desserts: [...prevState.desserts, newDessert]
+        }))
+    }
+    
+
     const [data, setData] = useState([]) 
     const [appOpen, setAppOpen] = useState(false);
     const [dinOpen, setDinOpen] = useState(false);
@@ -117,7 +117,7 @@ function Order(){
             <div key = {item.id}>
         
             <p className="menuItemContent"><span className="itemTitle">{item.title}:</span><br></br>{item.description}<br></br>{item.price}</p>
-            <button>add</button>
+            <button onClick={()=> handleAddToAppetizer(item.id, item.title, item.price)}>add</button>
         </div>
     ));
     // console.log("appetizer List:", appetizerList)
@@ -129,7 +129,7 @@ function Order(){
     const dinnerList = dinnerItems.map(item => (
         <div key = {item.id}>
             <p className="menuItemContent"><span className="itemTitle">{item.title}:</span><br></br>{item.description}<br></br>{item.price}</p>
-            <button>add</button>
+            <button onClick={()=> handleAddToEntree(item.id, item.title, item.price)}>add</button>
         </div>
     ));
 
@@ -139,7 +139,7 @@ function Order(){
     const dessertList = dessertItems.map(item => (
         <div key = {item.id}>
             <p className="menuItemContent"><span className="itemTitle">{item.title}:</span><br></br>{item.description}<br></br>{item.price}</p>
-            <button>add</button>
+            <button onClick={()=> handleAddToDessert(item.id, item.title, item.price)}>add</button>
         </div>
     ))
     
@@ -154,8 +154,10 @@ function Order(){
                 
             </div>
             <div className="appScroll" style={{overflowY: 'scroll'}}>
+
                 <h2 onClick={handleAppToggle} className="menuItemHeader">Appetizers</h2>
                 {appOpen === true ? appetizerList:null}
+                
                 <h2 onClick={handleDinToggle} className="menuItemHeader">Entrees</h2>
                 {dinOpen === true ? dinnerList:null}
                 <h2 onClick={handleDesToggle} className="menuItemHeader">Desserts</h2>
